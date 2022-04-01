@@ -1,4 +1,4 @@
-import { Card, Col } from 'react-bootstrap'
+import { Card, Col } from 'react-bootstrap';
 
 function Cards({ artwork }) {
 
@@ -13,7 +13,7 @@ function Cards({ artwork }) {
                 </Card.Body>
             </Card>
         </Col>
-    )
+    );
 }
 
-export default Cards
+export default Cards;

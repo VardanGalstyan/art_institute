@@ -1,4 +1,4 @@
-import { Col, Card, Placeholder } from 'react-bootstrap'
+import { Col, Card, Placeholder } from 'react-bootstrap';
 
 function CardPlaceholder() {
     return (
@@ -16,7 +16,7 @@ function CardPlaceholder() {
                 </Card.Body>
             </Card>
         </Col>
-    )
+    );
 }
 
-export default CardPlaceholder
+export default CardPlaceholder;

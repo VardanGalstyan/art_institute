@@ -5,17 +5,17 @@ function QueryInput({ query, setQuery, fetchArtworks, setLimit, limit }) {
 
 
     const handleChange = () => {
-        fetchArtworks()
-    }
+        fetchArtworks();
+    };
 
     const handleRefresh = () => {
-        setQuery('')
-        fetchArtworks()
-    }
+        setQuery('');
+        fetchArtworks();
+    };
 
     const handleQuery = e => {
-        setQuery(e.target.value)
-    }
+        setQuery(e.target.value);
+    };
 
 
     return (
@@ -55,7 +55,7 @@ function QueryInput({ query, setQuery, fetchArtworks, setLimit, limit }) {
             </Form.Select>
 
         </Row>
-    )
+    );
 }
 
-export default QueryInput
+export default QueryInput;

@@ -1,6 +1,6 @@
-import { Row } from 'react-bootstrap'
-import CardPlaceholder from './CardPlaceholder'
-import Cards from './Cards'
+import { Row } from 'react-bootstrap';
+import CardPlaceholder from './CardPlaceholder';
+import Cards from './Cards';
 
 function Artworks({ artworks, isLoading }) {
 
@@ -15,7 +15,7 @@ function Artworks({ artworks, isLoading }) {
                 ))
             }
         </Row >
-    )
+    );
 }
 
-export default Artworks
+export default Artworks;

@@ -1,25 +1,25 @@
-import { Pagination } from 'react-bootstrap'
+import { Pagination } from 'react-bootstrap';
 
 function Paginate({ artworks, setPage }) {
 
-    const totalPages = artworks?.pagination?.total_pages
-    const currentPage = artworks?.pagination?.current_page
+    const totalPages = artworks?.pagination?.total_pages;
+    const currentPage = artworks?.pagination?.current_page;
 
     const paginationHandler = (e, i) => {
-        setPage(i + 1)
-    }
+        setPage(i + 1);
+    };
 
     const toNextPage = () => {
         if (currentPage < totalPages) {
-            setPage(currentPage + 1)
+            setPage(currentPage + 1);
         }
-    }
+    };
 
     const toPreviousPage = () => {
         if (currentPage > 1) {
-            setPage(currentPage - 1)
+            setPage(currentPage - 1);
         }
-    }
+    };
 
 
 
@@ -44,7 +44,7 @@ function Paginate({ artworks, setPage }) {
             </Pagination>
 
         </div>
-    )
+    );
 }
 
-export default Paginate
+export default Paginate;
