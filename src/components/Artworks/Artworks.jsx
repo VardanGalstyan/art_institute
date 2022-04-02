@@ -1,9 +1,8 @@
 import { Row } from 'react-bootstrap';
-import CardPlaceholder from './CardPlaceholder';
-import Cards from './Cards';
+import CardPlaceholder from '../Cards/CardPlaceholder';
+import Cards from '../Cards/Cards';
 
 function Artworks({ artworks, isLoading }) {
-
 
     return (
         <Row className='my-5 justify-content-sm-evenly'>
@@ -18,4 +17,4 @@ function Artworks({ artworks, isLoading }) {
     );
 }
 
-export default Artworks;
+export default (Artworks);

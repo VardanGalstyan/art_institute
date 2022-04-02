@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { Pagination } from 'react-bootstrap';
 
 function Paginate({ artworks, setPage }) {
@@ -5,21 +6,21 @@ function Paginate({ artworks, setPage }) {
     const totalPages = artworks?.pagination?.total_pages;
     const currentPage = artworks?.pagination?.current_page;
 
-    const paginationHandler = (e, i) => {
+    const paginationHandler = useCallback((e, i) => {
         setPage(i + 1);
-    };
+    }, []);
 
-    const toNextPage = () => {
+    const toNextPage = useCallback(() => {
         if (currentPage < totalPages) {
             setPage(currentPage + 1);
         }
-    };
+    }, [currentPage, totalPages]);
 
-    const toPreviousPage = () => {
+    const toPreviousPage = useCallback(() => {
         if (currentPage > 1) {
             setPage(currentPage - 1);
         }
-    };
+    }, [currentPage]);
 
 
 

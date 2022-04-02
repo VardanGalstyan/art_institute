@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Container } from 'react-bootstrap';
-import QueryInput from './QueryInput';
-import Artworks from './Artworks';
-import Paginate from './Paginate';
+import QueryInput from '../QueryInput/QueryInput';
+import Artworks from '../Artworks/Artworks';
+import Paginate from '../Paginate/Paginate';
 
 
 function Home() {
@@ -12,6 +12,9 @@ function Home() {
     const [isLoading, setIsLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [limit, setLimit] = useState(10);
+
+
+
     const url = query.length > 0
         ? `https://api.artic.edu/api/v1/artworks/search?q=${query}&page=${page}&limit=${limit}`
         : `https://api.artic.edu/api/v1/artworks?page=${page}&limit=${limit}`;
@@ -25,10 +28,9 @@ function Home() {
                 const data = await response.json();
                 setArtworks(data);
                 setIsLoading(false);
-                // setQuery('')
             }
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     }, [url]);
 
@@ -39,7 +41,7 @@ function Home() {
 
     useEffect(() => {
         fetchArtworks();
-    }, [page, limit]);
+    }, [page, limit, query]);
 
 
     return (

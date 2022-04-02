@@ -1,21 +1,21 @@
+import { useState, useCallback } from 'react';
 import { Row, InputGroup, FormControl, Button, Form } from 'react-bootstrap';
 import { AiOutlineSearch } from 'react-icons/ai';
 
-function QueryInput({ query, setQuery, fetchArtworks, setLimit, limit }) {
+
+function QueryInput({ setQuery, setLimit, limit }) {
+
+    const [search, setSearch] = useState('');
 
 
-    const handleChange = () => {
-        fetchArtworks();
-    };
-
-    const handleRefresh = () => {
+    const handleRefresh = useCallback(() => {
+        setSearch('');
         setQuery('');
-        fetchArtworks();
-    };
+    }, []);
 
-    const handleQuery = e => {
-        setQuery(e.target.value);
-    };
+    const handleSearch = useCallback(() => {
+        setQuery(search);
+    }, [search]);
 
 
     return (
@@ -26,29 +26,31 @@ function QueryInput({ query, setQuery, fetchArtworks, setLimit, limit }) {
                 </InputGroup.Text>
                 <FormControl
                     placeholder="Search"
-                    value={query}
-                    onChange={handleQuery}
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                 />
                 <Button
-                    onClick={handleChange}
+                    onClick={handleSearch}
                     variant="outline-secondary">
                     Search
                 </Button>
                 <Button
                     onClick={handleRefresh}
-                    variant="outline-secondary">
+                    variant="outline-secondary"
+                    role={'button'}
+                >
                     Refresh
                 </Button>
             </InputGroup>
 
-            <Form.Label>Results</Form.Label>
+            <Form.Label>Limit Search Data</Form.Label>
 
             <Form.Select
                 aria-label="Results"
+                data-testid="select"
                 value={limit}
                 onChange={e => setLimit(e.target.value)}
             >
-                <option>Results</option>
                 <option value="10">10</option>
                 <option value="20">20</option>
                 <option value="40">40</option>

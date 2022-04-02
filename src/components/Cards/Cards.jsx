@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 function Cards({ artwork }) {
 
     return (
-        <Col xs={11} sm={12} md={4} lg={3} className='m-3'>
+        <Col xs={11} sm={12} md={4} lg={3} className='m-3' data-testid={`card-item-${artwork.id}`}>
             <Card className='' style={{ minWidth: '15rem' }}>
                 <Card.Body>
                     <Card.Title>{artwork.title}</Card.Title>
