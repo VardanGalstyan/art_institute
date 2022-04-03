@@ -13,3 +13,5 @@
 > `|lint| npm run lint`
 
 > `|lint fix| npm run lint-fix`
+
+> `|JEST Coverage| npm run coverage`
