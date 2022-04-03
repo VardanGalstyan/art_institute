@@ -39,11 +39,11 @@ function QueryInput({ setQuery, setLimit, limit }) {
                     variant="outline-secondary"
                     role={'button'}
                 >
-                    Refresh
+                    Clear
                 </Button>
             </InputGroup>
 
-            <Form.Label>Limit Search Data</Form.Label>
+            <Form.Label>Results per page</Form.Label>
 
             <Form.Select
                 aria-label="Results"

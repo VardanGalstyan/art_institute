@@ -2,7 +2,7 @@ import { Col, Card, Placeholder } from 'react-bootstrap';
 
 function CardPlaceholder() {
     return (
-        <Col xs={11} sm={12} md={4} lg={3} className='m-3'>
+        <Col xs={11} sm={12} md={4} lg={3} className='m-3 test-cards' data-testid={'plh-card-item'}>
             <Card className='mx-auto' style={{ minWidth: '15rem' }}>
                 <Card.Body>
                     <Placeholder as={Card.Title} animation="glow">

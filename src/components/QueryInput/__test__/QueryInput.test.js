@@ -12,7 +12,7 @@ describe('QueryInput', () => {
                 setQuery={mockedSetQuery}
             />
         );
-        const inputElement = screen.getByPlaceholderText(/Search/i);
+        const inputElement = screen.getByPlaceholderText('Search');
         expect(inputElement).toBeInTheDocument();
     });
 
@@ -22,7 +22,7 @@ describe('QueryInput', () => {
                 setQuery={mockedSetQuery}
             />
         );
-        const inputElement = screen.getByPlaceholderText(/Search/i);
+        const inputElement = screen.getByPlaceholderText('Search');
         fireEvent.change(inputElement, { target: { value: 'Give me something...' } });
         expect(inputElement.value).toBe('Give me something...');
     });
